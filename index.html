@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Complaint Box</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand-wrap">
+          <div class="brand-badge">CB</div>
+          <div>
+            <p class="eyebrow">Public Feedback Portal</p>
+            <h1>Complaint Box</h1>
+          </div>
+        </div>
+      </header>
+
+      <main class="layout">
+        <section class="card form-card">
+          <div class="section-heading">
+            <span class="pill">New Report</span>
+            <h2>Submit a complaint</h2>
+          </div>
+
+          <form id="complaintForm">
+            <div class="row two-col">
+              <label>
+                Full name
+                <input type="text" id="name" name="name" placeholder="Your name" required />
+              </label>
+
+              <label>
+                Email address
+                <input type="email" id="email" name="email" placeholder="you@example.com" required />
+              </label>
+            </div>
+
+            <div class="row two-col">
+              <label>
+                Category
+                <select id="category" name="category" required>
+                  <option value="">Select category</option>
+                  <option>Service</option>
+                  <option>Staff behavior</option>
+                  <option>Safety</option>
+                  <option>Infrastructure</option>
+                  <option>Other</option>
+                </select>
+              </label>
+
+              <label>
+                Priority
+                <select id="priority" name="priority" required>
+                  <option value="">Select priority</option>
+                  <option>Low</option>
+                  <option>Medium</option>
+                  <option>High</option>
+                  <option>Urgent</option>
+                </select>
+              </label>
+            </div>
+
+            <label>
+              Complaint details
+              <textarea
+                id="message"
+                name="message"
+                rows="6"
+                placeholder="Describe the issue in detail..."
+                required
+              ></textarea>
+            </label>
+
+            <div class="actions">
+              <button type="submit" class="primary-btn">Submit complaint</button>
+              <button type="reset" class="secondary-btn">Clear</button>
+            </div>
+          </form>
+        </section>
+
+        <aside class="card status-card">
+          <div class="section-heading">
+            <span class="pill neutral">Recent</span>
+            <h2>Recent complaints</h2>
+          </div>
+
+          <div id="complaintList" class="complaint-list" aria-live="polite">
+            <p class="empty-state">No complaints submitted yet.</p>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
